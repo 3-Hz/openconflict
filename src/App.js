@@ -3,6 +3,7 @@ import Map from './components/Map.js';
 import axios from 'axios';
 
 import './App.css';
+import 'leaflet/dist/leaflet.css';
 
 class App extends React.Component {
   constructor(props) {
