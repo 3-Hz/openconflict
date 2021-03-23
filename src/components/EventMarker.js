@@ -1,9 +1,8 @@
-import { Popup, CircleMarker } from 'react-leaflet';
+import { Popup, CircleMarker, useMap } from 'react-leaflet';
 
-const EventMarker = ({ conflict, mapRef }) => {
-
+const EventMarker = ({ conflict }) => {
+  // const map = useMap();
   // function handleOnFlyTo(coords) {
-  //   const map = mapRef;
   //   map.flyTo(coords, 14, { duration: 2 });
   // }
 

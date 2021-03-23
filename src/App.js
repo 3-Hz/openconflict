@@ -9,10 +9,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mapRef: null,
       conflicts: []
     };
-    this.handleMapRef = this.handleMapRef.bind(this);
+    //this.handleMapRef = this.handleMapRef.bind(this);
   }
 
   componentDidMount() {
@@ -25,16 +24,16 @@ class App extends React.Component {
       })
   }
 
-  handleMapRef(mapRef) {
-    this.setState({
-      mapRef: mapRef
-    })
-  }
+  // handleMapRef(mapRef) {
+  //   this.setState({
+  //     mapRef: mapRef
+  //   })
+  // }
 
   render() {
     return (
       <div className="App">
-        <Map conflicts={this.state.conflicts} handleMapRef={this.handleMapRef} mapRef={this.state.mapRef}/>
+        <Map conflicts={this.state.conflicts} handleMapRef={this.handleMapRef}/>
       </div>
     );
   }
