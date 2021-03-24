@@ -1,10 +1,10 @@
 import { Popup, CircleMarker, useMap } from 'react-leaflet';
 
 const EventMarker = ({ conflict }) => {
-  // const map = useMap();
-  // function handleOnFlyTo(coords) {
-  //   map.flyTo(coords, 14, { duration: 2 });
-  // }
+  const map = useMap();
+  function handleOnFlyTo(coords) {
+    map.flyTo(coords, 12, { duration: 2 });
+  }
 
   return(
     <CircleMarker
@@ -14,11 +14,11 @@ const EventMarker = ({ conflict }) => {
       weight={0.8}
       fillColor={'#f03'}
       radius={5}
-      // eventHandlers={{
-      //   click: (e) => {
-      //     handleOnFlyTo([Number(conflict.latitude),Number(conflict.longitude)]);
-      //   }
-      // }}
+      eventHandlers={{
+        click: (e) => {
+          handleOnFlyTo([Number(conflict.latitude),Number(conflict.longitude)]);
+        }
+      }}
     >
       <Popup>
         Event: {conflict.event_type}
