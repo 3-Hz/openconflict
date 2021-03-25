@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-import mapData from '../data/countries.json';
+import mapData from '../data/countries-trimmed.json';
 import EventGroup from './EventGroup.js';
 
 const Map = ({ conflicts, countryData, onCountryClick, handleMapRef, handleFGroupRef }) => {

@@ -20,7 +20,7 @@ class App extends React.Component {
     };
     this.onCountryClick = this.onCountryClick.bind(this);
     this.handleMapRef = this.handleMapRef.bind(this);
-    this.handleFGroupRef = this.handleFGroupRef.bind(this);
+    // this.handleFGroupRef = this.handleFGroupRef.bind(this);
   }
 
   componentDidMount() {
@@ -46,8 +46,14 @@ class App extends React.Component {
   // }
 
   onCountryClick(layer) {
+    console.log(layer);
     this.state.mapRef.fitBounds(layer.getBounds());
-    axios.get('http://localhost:1337/events/' + layer.feature.properties.ISO_A3 + '/' + this.state.startDate + '|' + this.state.endDate)
+    // layer.setStyle({
+    //   color: "green",
+    //   fillColor: this.state.color,
+    //   fillOpacity: 1,
+    // });
+    axios.get('http://localhost:1337/events/' + layer.feature.id + '/' + this.state.startDate + '|' + this.state.endDate)
     .then(data => {
       let conflicts = data.data.data;
       this.setState({
